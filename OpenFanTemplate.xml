@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>OpenFanController</Name>
+  <Repository>ghcr.io/sasakaranovic/openfancontroller:release</Repository>
+  <Registry>https://github.com/SasaKaranovic/OpenFanController</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/155377-support-sasakaranovic-openfan-controller/</Support>
+  <Project>https://sasakaranovic.com/projects/openfan-controller/</Project>
+  <Overview>OpenFAN is open-source, open-hardware 12V PWM fan controller for the hobbyists and hackers!&#xD;
+&#xD;
+This fan controller allows you to control 10 PWM fans over USB or remotely over network.&#xD;
+&#xD;
+OpenFAN gives you two ways to control each fan:&#xD;
+&#xD;
+- Traditional (PWM): Set target PWM and the fan will spin at whatever RPM it is designed to spin with that PWM. (ie. Assuming 2000RPM fan, if we set the PWM to 50%, the fan should spin at 1000RPM which is half of full speed)&#xD;
+&#xD;
+- Advanced (RPM): Set target RPM and OpenFAN will use it's built in PID algorithm to keep the fan always spinning at that RPM.&#xD;
+&#xD;
+OpenFAN also has an open-source API that allows you to programmatically control your fans, set custom profiles and more.&#xD;
+&#xD;
+OpenFAN was designed by PC enthusiast for PC enthusiasts.&#xD;
+&#xD;
+&#xD;
+Key features:&#xD;
+- Works on Windows, Linux and Mac&#xD;
+- 10x PWM fans (Supports 12V, 4-pin fans)&#xD;
+- Individually control each fan&#xD;
+- SATA power (cable not provided)&#xD;
+- Micro-USB communication (motherboard cable included)&#xD;
+- Control fans by setting target PWM or target RPM&#xD;
+- Optional I2C/1-Wire (header not populated)&#xD;
+- Open source API for communication and control&#xD;
+- Open source and open-hardware design&#xD;
+- Control fans over USB or remotely over network*&#xD;
+- FanControl integration through plugin&#xD;
+ &#xD;
+* To control fans remotely over network, the OpenFAN board needs to be connected to the PC via USB and running the OpenFAN software. The software allows you to access the fan controller remotely over network.</Overview>
+  <Category>Drivers: Tools: Other: Status:Stable</Category>
+  <WebUI>http://[IP]:[PORT:3210]</WebUI>
+  <TemplateURL/>
+  <Icon>https://github.com/SasaKaranovic/OpenFanController/blob/master/assets/logo.png?raw=true</Icon>
+  <ExtraParams>--memory=512M</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1708809674</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="OPENFANCOMPORT" Target="OPENFANCOMPORT" Default="/dev/ttyACM0" Mode="" Description="Path to OpenFan Controller USB-to-Serial port. Usually this is `/dev/ttyACM0` unless you have multiple USB-to-Serial devices connected" Type="Variable" Display="always" Required="true" Mask="false">/dev/ttyACM0</Config>
+  <Config Name="WEB_UI" Target="3000" Default="3210" Mode="tcp" Description="Server port for accessing Web UI" Type="Port" Display="always" Required="true" Mask="false">3210</Config>
+  <Config Name="OpenFAN USB Port" Target="" Default="" Mode="" Description="OpenFAN USB Device. Usually `/dev/ttyACM0`&#13;&#10;This should match your OPENFANCOMPORT environment variable." Type="Device" Display="always" Required="true" Mask="false">/dev/ttyACM0</Config>
+</Container>
