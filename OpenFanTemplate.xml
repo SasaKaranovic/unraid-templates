@@ -50,6 +50,6 @@ Key features:&#xD;
   <DonateLink/>
   <Requires/>
   <Config Name="OPENFANCOMPORT" Target="OPENFANCOMPORT" Default="/dev/ttyACM0" Mode="" Description="Path to OpenFan Controller USB-to-Serial port. Usually this is `/dev/ttyACM0` unless you have multiple USB-to-Serial devices connected" Type="Variable" Display="always" Required="true" Mask="false">/dev/ttyACM0</Config>
-  <Config Name="WEB_UI" Target="3000" Default="3210" Mode="tcp" Description="Server port for accessing Web UI" Type="Port" Display="always" Required="true" Mask="false">3210</Config>
+  <Config Name="WEB_UI" Target="3000" Default="3210" Mode="tcp" Description="Server port for accessing Web UI" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
   <Config Name="OpenFAN USB Port" Target="" Default="" Mode="" Description="OpenFAN USB Device. Usually `/dev/ttyACM0`&#13;&#10;This should match your OPENFANCOMPORT environment variable." Type="Device" Display="always" Required="true" Mask="false">/dev/ttyACM0</Config>
 </Container>
