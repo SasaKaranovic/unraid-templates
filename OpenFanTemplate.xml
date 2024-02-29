@@ -39,7 +39,7 @@ Key features:&#xD;
  &#xD;
 * To control fans remotely over network, the OpenFAN board needs to be connected to the PC via USB and running the OpenFAN software. The software allows you to access the fan controller remotely over network.</Overview>
   <Category>Drivers: Tools: Other: Status:Stable</Category>
-  <WebUI>http://[IP]:[PORT:3210]</WebUI>
+  <WebUI>http://[IP]:[PORT:3000]</WebUI>
   <TemplateURL/>
   <Icon>https://github.com/SasaKaranovic/OpenFanController/blob/master/assets/logo.png?raw=true</Icon>
   <ExtraParams>--memory=512M</ExtraParams>
