@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>OpenFAN-Service</Name>
+  <Repository>ghcr.io/sasakaranovic/openfan-service:latest</Repository>
+  <Registry>https://github.com/SasaKaranovic/OpenFan-Service/pkgs/container/openfan-service</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/SasaKaranovic/OpenFan-Service/issues</Support>
+  <Project>https://github.com/SasaKaranovic/OpenFan-Service</Project>
+  <Overview>Automatic fan control for the OpenFAN controller. Create fan curves in a web UI, drive them from Unraid disk temperatures (or CPU, scripts, other sources), with fail-safe to 100% and notifications if anything goes wrong.</Overview>
+  <Category>Tools: HomeAutomation:</Category>
+  <WebUI>http://[IP]:[PORT:5340]/</WebUI>
+  <Icon>https://raw.githubusercontent.com/SasaKaranovic/OpenFanController/master/assets/logo.png</Icon>
+  <ExtraParams>--restart=unless-stopped</ExtraParams>
+  <Config Name="Web UI port" Target="5340" Default="5340" Mode="tcp" Description="Port of the web UI" Type="Port" Display="always" Required="true" Mask="false">5340</Config>
+  <Config Name="Config" Target="/config" Default="/mnt/user/appdata/openfan-service" Mode="rw" Description="Settings, backups and history" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/openfan-service</Config>
+  <Config Name="Unraid disk info" Target="/unraid" Default="/var/local/emhttp" Mode="ro" Description="Read-only. Contains disks.ini with disk temperatures. Use path /unraid/disks.ini in the Unraid disks sensor source." Type="Path" Display="always" Required="false" Mask="false">/var/local/emhttp</Config>
+  <Config Name="OpenFAN USB device" Target="/dev/ttyACM0" Default="/dev/ttyACM0" Mode="" Description="The OpenFAN controller's USB serial device. Leave empty if you use the REST API instead." Type="Device" Display="always" Required="false" Mask="false">/dev/ttyACM0</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="User id for files in /config" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Group id for files in /config" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="Password" Target="OPENFAN_PASSWORD" Default="" Mode="" Description="Optional. Turns on the login with this password." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+</Container>
